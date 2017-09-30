@@ -19,6 +19,9 @@ public class Principal {
 		
 		//Resposta 2d
 		System.out.println(bds.ligacoesUFDiferente());
+		
+		//Resposta 3a
+		System.out.println(bds.gerarContaCliente());
 	}
 
 }

@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+
 public class BDSimulado {
 	
 	 //Atributos
@@ -133,5 +134,75 @@ public class BDSimulado {
     	return resultado;
     }
     
+    //Questão 3 código
+    
+    public ArrayList<LocalDateTime> ligacoesPorCliente1(String nome){
+    	ArrayList<LocalDateTime> resultado = new ArrayList<LocalDateTime>();
+    	
+    	for (int i = 0; i < this.ligacoes.size(); i++) {
+    		if (this.ligacoes.get(i).getClienteLigação().getNome().equals(nome)) {
+    			resultado.add(this.ligacoes.get(i).getDataeHoraInicio());
+    			
+				}
+    			
+				
+			}
+    	return resultado;
+			
+	}
+    
+    public ArrayList<String> ligacoesPorCliente2(String nome){
+    	ArrayList<String> resultado = new ArrayList<String>();
+    	
+    	for (int i = 0; i < this.ligacoes.size(); i++) {
+    		if (this.ligacoes.get(i).getClienteLigação().getNome().equals(nome)) {
+    			resultado.add(this.ligacoes.get(i).getNumTelDestino());
+				}
+    			
+				
+			}
+    	return resultado;
+			
+	}
+   
+    
+    public ArrayList<String> ligacoesPorCliente3(String nome){
+    	ArrayList<String> resultado = new ArrayList<String>();
+    	
+    	for (int i = 0; i < this.ligacoes.size(); i++) {
+    		if (this.ligacoes.get(i).getClienteLigação().getNome().equals(nome)) {
+    			resultado.add(this.ligacoes.get(i).getCidadeDestino().toString());
+    			
+				}
+    			
+				
+			}
+    	return resultado;
+			
+	}
+    
+    public ArrayList<String> ligacoesPorCliente4(String nome){
+    	ArrayList<String> resultado = new ArrayList<String>();
+    	
+    	for (int i = 0; i < this.ligacoes.size(); i++) {
+    		if (this.ligacoes.get(i).getClienteLigação().getNome().equals(nome)) {
+    			resultado.add(this.ligacoes.get(i).getUFDestino().toString());
+    			
+				}
+    			
+				
+			}
+    	return resultado;
+			
+    }
+    
+    //Questão 3 Método
+    public String gerarContaCliente(){
+    	return "------- Conta Cliente ------- \n" +
+	            "Cliente: " + getInfoCliente("Maria do Socorro") + "\n" +
+				"Ligações do Cliente" + ligacoesPorCliente1("Maria do Socorro") + ligacoesPorCliente2("Maria do Socorro")+ 
+				ligacoesPorCliente3("Maria do Socorro") + ligacoesPorCliente4("Maria do Socorro") + "\n";
+    	
+    }
     }
 
